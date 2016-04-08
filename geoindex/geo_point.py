@@ -41,6 +41,8 @@ class GeoPoint(object):
         """
         Machine representation of Point instance.
         """
+        if self.ref is not None:
+            return 'Point({0}, {1}) - {2}'.format(self.latitude, self.longitude, self.ref)
         return 'Point({0}, {1})'.format(self.latitude, self.longitude)
 
     __str__ = __repr__
